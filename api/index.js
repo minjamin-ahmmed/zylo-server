@@ -32,7 +32,7 @@ async function connectToDatabase() {
   return client;
 }
 
-app.get("/products", async (req, res) => {
+app.get("/api/products", async (req, res) => {
   try {
     const client = await connectToDatabase();
     const database = client.db("Products");
@@ -45,17 +45,9 @@ app.get("/products", async (req, res) => {
   }
 });
 
-app.get("/", (req, res) => {
+app.get("/api", (req, res) => {
   res.send("Zyloooooo Server is running");
 });
-
-// For local development
-if (process.env.NODE_ENV !== "production") {
-  const port = process.env.PORT || 5000;
-  app.listen(port, () => {
-    console.log(`Zyloooooo Server is running on port ${port}`);
-  });
-}
 
 // Export for Vercel
 module.exports = app;
