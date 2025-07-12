@@ -7,7 +7,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: ["http://localhost:5173", "https://zyloo-client.vercel.app"],
+    origin: ["http://localhost:5174", "https://zyloo-client.vercel.app"],
     credentials: true,
   })
 );
@@ -52,7 +52,7 @@ app.get("/", (req, res) => {
 // For local development
 if (process.env.NODE_ENV !== "production") {
   const port = process.env.PORT || 5000;
-  app.listen(port, () => {
+  app.listen(port, "0.0.0.0", () => {
     console.log(`Zyloooooo Server is running on port ${port}`);
   });
 }
