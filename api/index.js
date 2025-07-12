@@ -7,7 +7,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: ["http://localhost:5173", "https://zyloo-client.vercel.app/api"],
+    origin: ["http://localhost:5173", "https://zyloo-client.vercel.app"],
     credentials: true,
   })
 );
